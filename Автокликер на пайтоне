@@ -1,0 +1,17 @@
+from pynput.mouse import Button, Controller as MouseController
+import time
+
+# Задержка между кликами в секундах
+delay = float(input("Введите интервал задержки между кликами (секунды): "))
+
+mouse = MouseController()
+print(f'Автокликер запущен. Клик будет происходить каждые {delay} секунд.')
+
+try:
+    while True:
+        # Левый клик
+        mouse.click(Button.left)
+        print('Кликнут!')
+        time.sleep(delay)
+except KeyboardInterrupt:
+    print("\nПрервано пользователем.")
